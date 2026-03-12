@@ -1449,7 +1449,7 @@ if analysis_result:
         )
         selected_analysis[key] = selected
 
-    if st.button("基于所选项生成灵感候选", use_container_width=True):
+    if st.button("基于所选项生成灵感候选", type="primary", use_container_width=True):
         if not any(selected_analysis.values()):
             st.error("请至少选择一项设定拆解内容后再生成。")
         else:
@@ -1527,7 +1527,7 @@ if result:
             key="second_round_feedback",
         )
 
-        if st.button("生成修改后的梗概", use_container_width=True):
+        if st.button("生成修改后的梗概", type="primary", use_container_width=True):
             selected_index = candidate_options.get(selected_option)
             if selected_index is None:
                 st.session_state["second_round_error"] = "请选择一个基础版本后再生成。"
