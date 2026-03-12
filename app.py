@@ -909,7 +909,7 @@ def to_markdown_report(result: Dict[str, Any], second_round_result: Dict[str, An
     candidates = result.get("candidates", [])
     selected = result.get("selected_synopsis", {})
 
-    lines.append("# 新颖设定 Demo 导出结果")
+    lines.append("# 灵感 Agent 导出结果")
     lines.append("")
     lines.append("## 1. 输入信息")
     lines.append(f"- 主题：{input_info.get('topic', '')}")
@@ -928,7 +928,7 @@ def to_markdown_report(result: Dict[str, Any], second_round_result: Dict[str, An
             lines.append(f"- {key}：{value}")
         lines.append("")
 
-    lines.append("## 3. 新颖设定候选")
+    lines.append("## 3. 灵感设定候选")
     for idx, candidate in enumerate(candidates, start=1):
         lines.append(f"### 候选 {idx}：{candidate.get('设定名', '未命名设定')}")
         for key, value in candidate.items():
@@ -972,9 +972,9 @@ def to_markdown_report(result: Dict[str, Any], second_round_result: Dict[str, An
     return "\n".join(lines).strip()
 
 
-st.set_page_config(page_title="新颖设定 Demo", page_icon="🎬", layout="wide")
-st.title("新颖设定 Demo")
-st.caption("关键词/题材/IP → 设定拆解 → 新颖设定候选 → 短剧梗概")
+st.set_page_config(page_title="灵感 Agent", page_icon="🎬", layout="wide")
+st.title("灵感 Agent")
+st.caption("关键词/题材/IP → 设定拆解 → 灵感设定候选 → 短剧梗概")
 
 if "first_round_result" not in st.session_state:
     st.session_state["first_round_result"] = None
@@ -1021,7 +1021,7 @@ if result:
     st.subheader("2. 设定拆解")
     st.json(result.get("analysis", {}))
 
-    st.subheader("3. 新颖设定候选")
+    st.subheader("3. 灵感设定候选")
     candidates = result.get("candidates", [])
     for idx, candidate in enumerate(candidates, start=1):
         st.markdown(f"### 候选 {idx}：{candidate.get('设定名', '未命名设定')}")
@@ -1040,7 +1040,7 @@ if result:
         st.download_button(
             "下载 JSON",
             data=json_text,
-            file_name=f"{topic_safe}_新颖设定结果.json",
+            file_name=f"{topic_safe}_灵感设定结果.json",
             mime="application/json",
             use_container_width=True,
         )
@@ -1048,7 +1048,7 @@ if result:
         st.download_button(
             "下载 Markdown",
             data=markdown_text,
-            file_name=f"{topic_safe}_新颖设定结果.md",
+            file_name=f"{topic_safe}_灵感设定结果.md",
             mime="text/markdown",
             use_container_width=True,
         )

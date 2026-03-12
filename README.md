@@ -1,11 +1,11 @@
-# Novel Setting Demo
+# Inspiration Agent
 
-一个基于 Streamlit 的短剧/漫剧设定生成 Demo。
+一个基于 Streamlit 的短剧/漫剧灵感生成 Agent。
 
 用户输入关键词、题材或 IP，再补充热点/风格关键词，应用会生成：
 
 - 设定拆解
-- 多个新颖设定候选
+- 多个灵感设定候选
 - 最优设定的简要剧本梗概
 - 基于候选版本和修改意见的二次生成结果
 
@@ -117,13 +117,13 @@ VOLCENGINE_AGENT_API_URL="https://open.feedcoopapi.com/agent_api/agent/chat/comp
 推荐仓库名：
 
 ```text
-novel-setting-demo
+inspiration-agent
 ```
 
-如果你想强调“短剧设定”，也可以用：
+如果你想强调“短剧灵感”，也可以用：
 
 ```text
-short-drama-setting-demo
+short-drama-inspiration-agent
 ```
 
-前者更短，和当前项目目录也一致，建议优先使用。
+前者更短，也更贴合当前“灵感 Agent”的定位，建议优先使用。
